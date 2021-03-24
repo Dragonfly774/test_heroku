@@ -1,7 +1,8 @@
 import json
+import os
 
 from flask import Flask, url_for, request, render_template, redirect
-
+from waitress import serve
 from flask02les.loginform import LoginForm
 
 app = Flask(__name__)
@@ -79,6 +80,10 @@ def table(sex, age):
     param['age'] = age
     return render_template('table.html', **param)
 
-
 if __name__ == '__main__':
-    app.run(port=8080, host='127.0.0.1')
+    # app.run(port=8080, host='127.0.0.1')
+    port = int(os.environ.get('PORT', 5000))
+    # app.run(port=port, host="0.0.0.0")
+
+    # с дефаултными значениями будет не более 4 потов
+    serve(app, port=port, host="0.0.0.0")
