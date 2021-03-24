@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h4>Оформление каюты</h4>
+{%if sex in "male" %}
+{%if 21 >= age %}
+<table>
+    <tr style="background: #808080" width="400">
+        <th>цвет</th>
+        <th style="background: #808080">эблема</th>
+    </tr>
+    <colgroup>
+        <col span="1" style="background: blue">
+        <col style="background-color:white">
+    </colgroup>
+    <tr>
+        <td width="400" height="400"></td>
+        <td><img src="/static/img/min.gif" alt="Инженерные тренажеры"></td>
+    </tr>
+</table>
+
+
+{%elif 21 <= age %}
+<table>
+    <tr style="background: #808080" width="400">
+        <th>цвет</th>
+        <th style="background: #808080">эблема</th>
+    </tr>
+    <colgroup>
+        <col span="1" style="background: darkblue">
+        <col style="background-color:white">
+    </colgroup>
+    <tr>
+        <td width="400" height="400"></td>
+        <td><img src="/static/img/max.jpg" alt="Инженерные тренажеры"></td>
+    </tr>
+</table>
+{%endif%}
+
+{%else%}
+{%if 21 <= age %}
+<table>
+    <tr style="background: #808080" width="400">
+        <th>цвет</th>
+        <th style="background: #808080">эблема</th>
+    </tr>
+    <colgroup>
+        <col span="1" style="background: pink">
+        <col style="background-color:white">
+    </colgroup>
+    <tr>
+        <td width="400" height="400"></td>
+        <td><img src="/static/img/max.jpg" alt="Инженерные тренажеры"></td>
+    </tr>
+</table>
+
+{%elif 21 >= age %}
+<table>
+    <tr style="background: #808080" width="400">
+        <th>цвет</th>
+        <th style="background: #808080">эблема</th>
+    </tr>
+    <colgroup>
+        <col span="1" style="background: red">
+        <col style="background-color:white">
+    </colgroup>
+    <tr>
+        <td width="400" height="400"></td>
+        <td><img src="/static/img/min.gif" alt="Инженерные тренажеры"></td>
+    </tr>
+</table>
+{%endif%}
+
+
+{%endif%}
+{%endblock%}
